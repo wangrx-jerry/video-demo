@@ -1,0 +1,151 @@
+body{
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+	background-color: #999
+}
+/* video container */
+.videoContainer{
+	width:600px;
+	height:350px;
+	position:relative;
+	overflow:hidden;
+	background:#000;
+	color:#ccc;
+}
+
+
+/*** 控制区域样式 ***/
+/* 控制区 容器 */
+.control{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height: 40px;
+	z-index:5;
+	display:none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: transparent;
+	color:#ccc;
+}
+/* 中间部分（进度和声音） */
+.middleControl{
+	flex-grow: 1;
+	cursor: pointer;
+}
+/* 全屏 */
+.rightControl{
+	text-align: center;
+}
+
+.control div.btn { 
+	width:34px;
+	height:30px;
+	padding:0 5px; 
+	cursor:pointer;
+} 
+/* 播放 */
+.control div.btnPlay::after{
+	font-family: "iconfont";
+	content: "\e66a"; 
+	font-size: 20px;
+}
+/* 暂停 */
+ .control div.paused::after{
+	font-family: "iconfont";
+	content: "\e612"; 
+	font-size: 20px
+} 
+/* 全屏 */
+.control div.btnFS::after{
+	font-family: "iconfont";
+	content: "\e723"; 
+	font-size: 20px; 
+}  
+/* 进度条 */
+.progress {
+	width:100%;
+	height:2px;
+	position:relative;
+	cursor:pointer;
+	background: #ccc; 
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+.progress span {
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+.timeBar{
+	z-index:10;
+	width:0;
+	background: #F04702;
+}
+.bufferBar{
+	z-index:5;
+	width:0;
+	background: #777;
+}
+/* 播放时间 */
+.time{ 
+	font-size:12px;
+	padding-top: 7px
+} 
+/* 其它（lodaing， 播放区域上方的蒙版） */
+.loading, #init{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%; 
+	z-index:2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} 
+.loading{
+	background:url(./img/loading.gif) no-repeat 50% 50%;
+	
+}  
+#init::after{
+	font-family: "iconfont";
+	content: "\e689";
+	font-size: 50px;
+	color: gray;
+}
+
+footer a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 6px 0;
+	background-color: #7FE8AD;
+	text-decoration: none;
+	font-size: 16px;
+}
+ /* iconfont */
+@font-face {
+	font-family: 'iconfont';
+	src: url('./font/iconfont.eot');
+	src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+	url('./font/iconfont.woff') format('woff'),
+	url('./font/iconfont.ttf') format('truetype'),
+	url('./font/iconfont.svg#iconfont') format('svg');
+  }
+  .iconfont{
+	font-family:"iconfont" !important;
+	font-size:16px;font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+  }

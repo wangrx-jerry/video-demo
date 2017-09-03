@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>video</title>
+	<link rel="stylesheet" href="video.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="video.js"></script>
+</head>
+
+<body>
+	<!-- Content -->
+	<section id="wrapper">
+		<div class="videoContainer">
+			<video id="myVideo" controls preload="auto" poster="./img/poster.jpg" width="100%" height="350">
+				<source src="https://media.html5media.info/video.mp4" type="video/mp4" />
+				<p>Your browser does not support the video tag.</p>
+			</video>
+			<!-- 底部控制 -->
+			<div class="control">
+				<div class="leftControl">
+					<div class="btnPlay btn" title="Play/Pause video"></div>
+				</div>
+				<div class="middleControl">
+					<div class="progress">
+						<span class="bufferBar"></span>
+						<span class="timeBar"></span>
+					</div>
+					<div class="time">
+						<span class="current"></span> /
+						<span class="duration"></span>
+					</div>
+				</div>
+				<div class="rightControl">
+					<div class="btnFS btn" title="Switch to full screen"></div>
+				</div>
+			</div>
+			<div class="loading"></div>
+		</div>
+		<footer>
+			<a href="../video/" title="点击查看代码">代码</a>
+		</footer>
+	</section>
+</body>
+</html>
